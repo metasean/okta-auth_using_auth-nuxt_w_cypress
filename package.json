@@ -9,13 +9,17 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "post-update": "yarn upgrade --latest"
+    "post-update": "yarn upgrade --latest",
+    "cypress": "node_modules/.bin/cypress",
+    "e2e": "npm run cypress run --scripts-prepend-node-path",
+    "install-cypress": "apt-get install Xvfb && cypress install && yarn add --dev cypress && node_modules/.bin/cypress open"
   },
   "dependencies": {
+    "@nuxt/http": "^0.1.0",
     "@nuxtjs/auth": "git+https://github.com/metasean/auth-module.git#okta",
     "@nuxtjs/axios": "^5.5.4",
     "@nuxtjs/dotenv": "^1.3.0",
-    "@nuxt/http": "^0.1.0",
+    "cypress": "^3.4.0",
     "nuxt": "^2.5.1",
     "reqlim": "^0.0.0"
   }
